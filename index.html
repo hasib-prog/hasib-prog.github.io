@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Name | Cybersecurity Portfolio</title>
+  <meta name="description" content="Cybersecurity Portfolio — SOC Analyst, Threat Hunter, CSE Student" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- Google Fonts: Share Tech Mono (terminal feel) + Rajdhani (headings) + Inter (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ========================================================
+       LOADING SCREEN
+  ======================================================== -->
+  <div id="loader" aria-hidden="true">
+    <div class="loader-inner">
+      <div class="loader-logo">SYS_INIT</div>
+      <div class="loader-bar"><div class="loader-fill"></div></div>
+      <div class="loader-text" id="loader-text">Initializing secure environment...</div>
+    </div>
+  </div>
+
+  <!-- ========================================================
+       NAVIGATION
+  ======================================================== -->
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <!-- Logo / Brand -->
+      <a href="#home" class="nav-logo" aria-label="Home">
+        <span class="logo-bracket">[</span>
+        <span class="logo-text">Y.NAME</span>
+        <span class="logo-bracket">]</span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <ul class="nav-links" role="list">
+        <li><a href="#about"          class="nav-link">About</a></li>
+        <li><a href="#skills"         class="nav-link">Skills</a></li>
+        <li><a href="#projects"       class="nav-link">Projects</a></li>
+        <li><a href="#writeups"       class="nav-link">Writeups</a></li>
+        <li><a href="#certifications" class="nav-link">Certs</a></li>
+        <li><a href="#achievements"   class="nav-link">Achievements</a></li>
+        <li><a href="#contact"        class="nav-link">Contact</a></li>
+        <li>
+          <a href="assets/resume.pdf" download class="nav-cta" aria-label="Download Resume">
+            Resume <span class="cta-arrow">↓</span>
+          </a>
+        </li>
+      </ul>
+
+      <!-- Mobile Hamburger -->
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="ham-line"></span>
+        <span class="ham-line"></span>
+        <span class="ham-line"></span>
+      </button>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+      <ul role="list">
+        <li><a href="#about"          class="mobile-link">About</a></li>
+        <li><a href="#skills"         class="mobile-link">Skills</a></li>
+        <li><a href="#projects"       class="mobile-link">Projects</a></li>
+        <li><a href="#writeups"       class="mobile-link">Writeups</a></li>
+        <li><a href="#certifications" class="mobile-link">Certs</a></li>
+        <li><a href="#achievements"   class="mobile-link">Achievements</a></li>
+        <li><a href="#contact"        class="mobile-link">Contact</a></li>
+        <li><a href="assets/resume.pdf" download class="mobile-link mobile-resume">↓ Download Resume</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ========================================================
+       SECTION 1 — HERO
+  ======================================================== -->
+  <section id="home" class="hero-section" aria-label="Hero">
+
+    <!-- Animated grid background canvas -->
+    <canvas id="hero-canvas" aria-hidden="true"></canvas>
+
+    <!-- Scan-line overlay -->
+    <div class="scanlines" aria-hidden="true"></div>
+
+    <div class="hero-content">
+      <!-- Terminal-style prompt line -->
+      <div class="hero-prompt reveal" data-delay="0">
+        <span class="prompt-prefix">root@cyberlab:~$</span>
+        <span class="prompt-cmd"> cat profile.txt</span>
+      </div>
+
+      <!-- Name -->
+      <h1 class="hero-name reveal" data-delay="1">
+        <span class="name-line">Your</span>
+        <span class="name-line accent">Name</span>
+      </h1>
+
+      <!-- Typed title -->
+      <div class="hero-title reveal" data-delay="2">
+        <span id="typed-text" aria-live="polite"></span>
+        <span class="cursor-blink" aria-hidden="true">_</span>
+      </div>
+
+      <!-- Tagline -->
+      <p class="hero-tagline reveal" data-delay="3">
+        Hunting threats before they hunt you. Building defenses that adapt, detect, and respond.
+      </p>
+
+      <!-- Status badges -->
+      <div class="hero-badges reveal" data-delay="4" aria-label="Status indicators">
+        <span class="badge badge-green">● Available for Internships</span>
+        <span class="badge badge-blue">● Open to Entry-Level Roles</span>
+      </div>
+
+      <!-- CTA Buttons -->
+      <div class="hero-buttons reveal" data-delay="5">
+        <a href="#projects" class="btn btn-primary">
+          <span class="btn-icon">⬡</span> View Projects
+        </a>
+        <a href="assets/resume.pdf" download class="btn btn-secondary">
+          <span class="btn-icon">↓</span> Download Resume
+        </a>
+      </div>
+
+      <!-- Quick stats -->
+      <div class="hero-stats reveal" data-delay="6" aria-label="Quick statistics">
+        <div class="stat">
+          <span class="stat-num" data-target="6">0</span>
+          <span class="stat-label">Projects</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true">|</div>
+        <div class="stat">
+          <span class="stat-num" data-target="3">0</span>
+          <span class="stat-label">CTFs</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true">|</div>
+        <div class="stat">
+          <span class="stat-num" data-target="4">0</span>
+          <span class="stat-label">Certs in Progress</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="scroll-indicator" aria-hidden="true">
+      <span>SCROLL</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       SECTION 2 — ABOUT
+  ======================================================== -->
+  <section id="about" class="section about-section" aria-labelledby="about-heading">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">// 01</span>
+        <h2 id="about-heading" class="section-title">About Me</h2>
+        <div class="title-line"></div>
+      </div>
+
+      <div class="about-grid">
+        <!-- Terminal / Profile Card -->
+        <div class="about-terminal reveal" data-delay="1">
+          <div class="terminal-header">
+            <span class="t-dot t-red"></span>
+            <span class="t-dot t-yellow"></span>
+            <span class="t-dot t-green"></span>
+            <span class="t-title">profile.json</span>
+          </div>
+          <div class="terminal-body">
+<pre><code><span class="t-key">{</span>
+  <span class="t-key">"name":</span>       <span class="t-val">"Your Name"</span>,
+  <span class="t-key">"role":</span>       <span class="t-val">"CSE Student"</span>,
+  <span class="t-key">"focus":</span>      <span class="t-val">"SOC Analysis"</span>,
+  <span class="t-key">"university":</span> <span class="t-val">"Your University"</span>,
+  <span class="t-key">"year":</span>       <span class="t-val">"3rd Year"</span>,
+  <span class="t-key">"location":</span>   <span class="t-val">"Your City, Country"</span>,
+  <span class="t-key">"status":</span>     <span class="t-val">"Seeking Opportunities"</span>,
+  <span class="t-key">"interests":</span> [
+    <span class="t-val">"Threat Detection"</span>,
+    <span class="t-val">"Malware Analysis"</span>,
+    <span class="t-val">"Incident Response"</span>,
+    <span class="t-val">"CTF Competitions"</span>
+  ]
+<span class="t-key">}</span></code></pre>
+          </div>
+        </div>
+
+        <!-- Bio Text -->
+        <div class="about-bio">
+          <p class="bio-text reveal" data-delay="1">
+            I'm a Computer Science student with a deep passion for cybersecurity, specifically focused on becoming a 
+            <strong class="accent-text">Security Operations Center (SOC) Analyst</strong>. I thrive on investigating 
+            threats, dissecting malware, and building detection rules that catch attackers in the act.
+          </p>
+          <p class="bio-text reveal" data-delay="2">
+            My journey into cybersecurity started when I became fascinated by how adversaries think — and more importantly, 
+            how defenders can stay one step ahead. I spend my free time participating in CTF competitions, building 
+            home labs, and writing threat investigation reports.
+          </p>
+          <p class="bio-text reveal" data-delay="3">
+            I'm currently seeking <strong class="accent-text">internship and entry-level SOC Analyst opportunities</strong> 
+            where I can contribute to real-world incident response, threat hunting, and security monitoring.
+          </p>
+
+          <!-- Interest Tags -->
+          <div class="interest-tags reveal" data-delay="4" aria-label="Cybersecurity interests">
+            <span class="tag">🛡️ Blue Team</span>
+            <span class="tag">🔍 Threat Hunting</span>
+            <span class="tag">🧪 Malware Analysis</span>
+            <span class="tag">📊 SIEM</span>
+            <span class="tag">🔬 Forensics</span>
+            <span class="tag">🚨 Incident Response</span>
+            <span class="tag">🌐 Network Security</span>
+            <span class="tag">🏴 CTF Player</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================
+       SECTION 3 — SKILLS
+  ======================================================== -->
+  <section id="skills" class="section skills-section" aria-labelledby="skills-heading">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">// 02</span>
+        <h2 id="skills-heading" class="section-title">Skills & Toolkit</h2>
+        <div class="title-line"></div>
+      </div>
+
+      <div class="skills-grid">
+
+        <!-- ---- Category: Core SOC Skills ---- -->
+        <div class="skill-category reveal" data-delay="1">
+          <h3 class="skill-cat-title">
+            <span class="cat-icon">⚡</span> Core SOC Skills
+          </h3>
+          <div class="skill-bars">
+            <!-- Add / remove skills easily below -->
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">Log Analysis</span>
+                <span class="skill-pct">85%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">Threat Detection</span>
+                <span class="skill-pct">80%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">Incident Response</span>
+                <span class="skill-pct">75%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" data-width="75"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">Threat Intelligence</span>
+                <span class="skill-pct">70%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" data-width="70"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ---- Category: Network & Security ---- -->
+        <div class="skill-category reveal" data-delay="2">
+          <h3 class="skill-cat-title">
+            <span class="cat-icon">🌐</span> Network & Security
+          </h3>
+          <div class="skill-bars">
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">Network Security</span>
+                <span class="skill-pct">80%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">Packet Analysis (Wireshark)</span>
+                <span class="skill-pct">78%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" data-width="78"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">Malware Analysis</span>
+                <span class="skill-pct">70%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" data-width="70"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">Vulnerability Assessment</span>
+                <span class="skill-pct">65%</span>
+              </div>
+              <div class="skill-bar"><div class="skill-fill" data-width="65"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ---- Category: Tools & Platforms ---- -->
+        <div class="skill-category reveal" data-delay="1">
+          <h3 class="skill-cat-title">
+            <span class="cat-icon">🛠️</span> Tools & Platforms
+          </h3>
+          <!-- Tool badges (easier to add than bars) -->
+          <div class="tool-badges">
+            <span class="tool-badge">Splunk</span>
+            <span class="tool-badge">Elastic SIEM</span>
+            <span class="tool-badge">Wireshark</span>
+            <span class="tool-badge">Nmap</span>
+            <span class="tool-badge">Metasploit</span>
+            <span class="tool-badge">Snort / Suricata</span>
+            <span class="tool-badge">YARA</span>
+            <span class="tool-badge">VirusTotal</span>
+            <span class="tool-badge">Burp Suite</span>
+            <span class="tool-badge">Any.run</span>
+            <span class="tool-badge">TheHive</span>
+            <span class="tool-badge">Velociraptor</span>
+          </div>
+        </div>
+
+        <!-- ---- Category: Programming & OS ---- -->
+        <div class="skill-category reveal" data-delay="2">
+          <h3 class="skill-cat-title">
+            <span class="cat-icon">💻</span> Programming & OS
+          </h3>
+          <div class="tool-badges">
+            <span class="tool-badge">Python</span>
+            <span class="tool-badge">Bash Scripting</span>
+            <span class="tool-badge">PowerShell</span>
+            <span class="tool-badge">SQL</span>
+            <span class="tool-badge">Linux (Kali)</span>
+            <span class="tool-badge">Ubuntu Server</span>
+            <span class="tool-badge">Windows AD</span>
+            <span class="tool-badge">Git / GitHub</span>
+          </div>
+        </div>
+
+      </div><!-- /skills-grid -->
+    </div>
+  </section>
+
+  <!-- ========================================================
+       SECTION 4 — PROJECTS
+  ======================================================== -->
+  <section id="projects" class="section projects-section" aria-labelledby="projects-heading">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">// 03</span>
+        <h2 id="projects-heading" class="section-title">Projects</h2>
+        <div class="title-line"></div>
+      </div>
+
+      <!-- Filter Buttons (future-ready; JS handles filtering) -->
+      <div class="project-filters reveal" role="group" aria-label="Filter projects by category">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="malware">Malware</button>
+        <button class="filter-btn" data-filter="network">Network</button>
+        <button class="filter-btn" data-filter="siem">SIEM</button>
+        <button class="filter-btn" data-filter="threat-intel">Threat Intel</button>
+        <button class="filter-btn" data-filter="forensics">Forensics</button>
+      </div>
+
+      <!-- Project Grid -->
+      <!-- To ADD a new project: copy one .project-card block and update the content -->
+      <div class="projects-grid" id="projects-grid">
+
+        <!-- PROJECT 1 -->
+        <article class="project-card reveal" data-category="malware" data-delay="1" aria-label="Project: Malware Analysis Lab">
+          <div class="card-header">
+            <div class="card-icon" aria-hidden="true">🧬</div>
+            <div class="card-meta">
+              <span class="card-category">Malware</span>
+              <span class="card-status status-complete">Completed</span>
+            </div>
+          </div>
+          <h3 class="card-title">Malware Analysis Lab</h3>
+          <p class="card-desc">
+            Built an isolated VM-based sandbox to safely detonate and analyze malware samples. 
+            Conducted static and dynamic analysis on real-world ransomware and RAT samples using IDA Free, 
+            ProcMon, and REMnux.
+          </p>
+          <div class="card-tools" aria-label="Tools used">
+            <span class="tool-tag">REMnux</span>
+            <span class="tool-tag">ProcMon</span>
+            <span class="tool-tag">IDA Free</span>
+            <span class="tool-tag">YARA</span>
+            <span class="tool-tag">VirusTotal</span>
+          </div>
+          <div class="card-actions">
+            <a href="#" class="card-btn btn-github" target="_blank" rel="noopener" aria-label="View GitHub repository">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              GitHub
+            </a>
+            <a href="#" class="card-btn btn-report" target="_blank" rel="noopener" aria-label="View writeup report">
+              📄 Writeup
+            </a>
+          </div>
+        </article>
+
+        <!-- PROJECT 2 -->
+        <article class="project-card reveal" data-category="network" data-delay="2" aria-label="Project: PCAP Traffic Investigation">
+          <div class="card-header">
+            <div class="card-icon" aria-hidden="true">🔬</div>
+            <div class="card-meta">
+              <span class="card-category">Network</span>
+              <span class="card-status status-complete">Completed</span>
+            </div>
+          </div>
+          <h3 class="card-title">PCAP Traffic Investigation</h3>
+          <p class="card-desc">
+            Investigated suspicious network traffic from a compromised host. Identified C2 beaconing, 
+            DNS tunneling artifacts, and lateral movement indicators using Wireshark and NetworkMiner.
+          </p>
+          <div class="card-tools" aria-label="Tools used">
+            <span class="tool-tag">Wireshark</span>
+            <span class="tool-tag">NetworkMiner</span>
+            <span class="tool-tag">Zeek</span>
+            <span class="tool-tag">tshark</span>
+          </div>
+          <div class="card-actions">
+            <a href="#" class="card-btn btn-github" target="_blank" rel="noopener">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              GitHub
+            </a>
+            <a href="#" class="card-btn btn-report">📄 Writeup</a>
+          </div>
+        </article>
+
+        <!-- PROJECT 3 -->
+        <article class="project-card reveal" data-category="siem" data-delay="3" aria-label="Project: SIEM Log Analysis">
+          <div class="card-header">
+            <div class="card-icon" aria-hidden="true">📊</div>
+            <div class="card-meta">
+              <span class="card-category">SIEM</span>
+              <span class="card-status status-complete">Completed</span>
+            </div>
+          </div>
+          <h3 class="card-title">SIEM Log Analysis</h3>
+          <p class="card-desc">
+            Deployed a home lab SIEM using Elastic Stack. Ingested Windows event logs, Sysmon, and 
+            firewall logs. Built detection rules for brute force, privilege escalation, and persistence 
+            mechanisms mapped to MITRE ATT&amp;CK.
+          </p>
+          <div class="card-tools" aria-label="Tools used">
+            <span class="tool-tag">Elastic SIEM</span>
+            <span class="tool-tag">Sysmon</span>
+            <span class="tool-tag">Logstash</span>
+            <span class="tool-tag">MITRE ATT&amp;CK</span>
+          </div>
+          <div class="card-actions">
+            <a href="#" class="card-btn btn-github" target="_blank" rel="noopener">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              GitHub
+            </a>
+            <a href="#" class="card-btn btn-report">📄 Writeup</a>
+          </div>
+        </article>
+
+        <!-- PROJECT 4 -->
+        <article class="project-card reveal" data-category="forensics" data-delay="1" aria-label="Project: Phishing Email Investigation">
+          <div class="card-header">
+            <div class="card-icon" aria-hidden="true">🎣</div>
+            <div class="card-meta">
+              <span class="card-category">Forensics</span>
+              <span class="card-status status-complete">Completed</span>
+            </div>
+          </div>
+          <h3 class="card-title">Phishing Email Investigation</h3>
+          <p class="card-desc">
+            Performed full header analysis and payload extraction on real phishing samples from PhishTank. 
+            Identified threat actor TTPs, spoofed sender domains, and malicious attachment indicators 
+            of compromise (IoCs).
+          </p>
+          <div class="card-tools" aria-label="Tools used">
+            <span class="tool-tag">PhishTank</span>
+            <span class="tool-tag">MXToolbox</span>
+            <span class="tool-tag">CyberChef</span>
+            <span class="tool-tag">VirusTotal</span>
+          </div>
+          <div class="card-actions">
+            <a href="#" class="card-btn btn-github" target="_blank" rel="noopener">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              GitHub
+            </a>
+            <a href="#" class="card-btn btn-report">📄 Writeup</a>
+          </div>
+        </article>
+
+        <!-- PROJECT 5 -->
+        <article class="project-card reveal" data-category="threat-intel" data-delay="2" aria-label="Project: Threat Intelligence Report">
+          <div class="card-header">
+            <div class="card-icon" aria-hidden="true">🕵️</div>
+            <div class="card-meta">
+              <span class="card-category">Threat Intel</span>
+              <span class="card-status status-complete">Completed</span>
+            </div>
+          </div>
+          <h3 class="card-title">Threat Intelligence Report</h3>
+          <p class="card-desc">
+            Researched and produced a structured threat intelligence report on the Lazarus Group APT. 
+            Documented TTPs, IoCs, victimology, and defensive recommendations following the MITRE ATT&amp;CK 
+            and STIX/TAXII frameworks.
+          </p>
+          <div class="card-tools" aria-label="Tools used">
+            <span class="tool-tag">MITRE ATT&amp;CK</span>
+            <span class="tool-tag">OpenCTI</span>
+            <span class="tool-tag">STIX</span>
+            <span class="tool-tag">OSINT</span>
+          </div>
+          <div class="card-actions">
+            <a href="#" class="card-btn btn-github" target="_blank" rel="noopener">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              GitHub
+            </a>
+            <a href="#" class="card-btn btn-report">📄 Writeup</a>
+          </div>
+        </article>
+
+        <!-- PROJECT 6 -->
+        <article class="project-card reveal" data-category="siem" data-delay="3" aria-label="Project: SOC Detection Engineering">
+          <div class="card-header">
+            <div class="card-icon" aria-hidden="true">⚙️</div>
+            <div class="card-meta">
+              <span class="card-category">SIEM</span>
+              <span class="card-status status-wip">In Progress</span>
+            </div>
+          </div>
+          <h3 class="card-title">SOC Detection Engineering</h3>
+          <p class="card-desc">
+            Developing a custom detection rule library for Splunk targeting common adversary behaviors. 
+            Rules are aligned with MITRE ATT&amp;CK and tested against Atomic Red Team simulations in a 
+            dedicated home lab environment.
+          </p>
+          <div class="card-tools" aria-label="Tools used">
+            <span class="tool-tag">Splunk SPL</span>
+            <span class="tool-tag">Atomic Red Team</span>
+            <span class="tool-tag">MITRE ATT&amp;CK</span>
+            <span class="tool-tag">Python</span>
+          </div>
+          <div class="card-actions">
+            <a href="#" class="card-btn btn-github" target="_blank" rel="noopener">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              GitHub
+            </a>
+            <a href="#" class="card-btn btn-report">📄 Writeup</a>
+          </div>
+        </article>
+
+      </div><!-- /projects-grid -->
+    </div>
+  </section>
+
+  <!-- ========================================================
+       SECTION 5 — WRITEUPS / BLOG
+  ======================================================== -->
+  <section id="writeups" class="section writeups-section" aria-labelledby="writeups-heading">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">// 04</span>
+        <h2 id="writeups-heading" class="section-title">Writeups & Research</h2>
+        <div class="title-line"></div>
+      </div>
+
+      <p class="section-subtitle reveal">
+        Investigation reports, CTF writeups, and cybersecurity research notes.
+      </p>
+
+      <!-- Writeup Cards Grid -->
+      <!-- To ADD a new writeup: copy a .writeup-card block and update content -->
+      <div class="writeups-grid">
+
+        <article class="writeup-card reveal" data-delay="1">
+          <div class="writeup-meta">
+            <span class="writeup-date">// Coming Soon</span>
+            <span class="writeup-tag">CTF Writeup</span>
+          </div>
+          <h3 class="writeup-title">TryHackMe — SOC Level 1 Path Notes</h3>
+          <p class="writeup-excerpt">
+            Detailed notes and key takeaways from completing the TryHackMe SOC Level 1 learning path, 
+            covering log analysis, network traffic analysis, and incident response fundamentals.
+          </p>
+          <a href="#" class="writeup-link" aria-label="Read full writeup">Read Writeup →</a>
+        </article>
+
+        <article class="writeup-card reveal" data-delay="2">
+          <div class="writeup-meta">
+            <span class="writeup-date">// Coming Soon</span>
+            <span class="writeup-tag">Threat Analysis</span>
+          </div>
+          <h3 class="writeup-title">Analyzing a LockBit Ransomware Sample</h3>
+          <p class="writeup-excerpt">
+            Static and dynamic analysis of a LockBit ransomware binary. Extraction of IoCs, 
+            network behavior, registry modifications, and YARA rule development.
+          </p>
+          <a href="#" class="writeup-link" aria-label="Read full writeup">Read Writeup →</a>
+        </article>
+
+        <article class="writeup-card reveal" data-delay="3">
+          <div class="writeup-meta">
+            <span class="writeup-date">// Coming Soon</span>
+            <span class="writeup-tag">Blue Team</span>
+          </div>
+          <h3 class="writeup-title">Building a Home SOC Lab on a Budget</h3>
+          <p class="writeup-excerpt">
+            Step-by-step guide to setting up a professional SOC home lab using free and open-source 
+            tools: Elastic SIEM, Sysmon, Zeek, Wazuh, and a vulnerable Windows AD environment.
+          </p>
+          <a href="#" class="writeup-link" aria-label="Read full writeup">Read Writeup →</a>
+        </article>
+
+      </div><!-- /writeups-grid -->
+    </div>
+  </section>
+
+  <!-- ========================================================
+       SECTION 6 — CERTIFICATIONS
+  ======================================================== -->
+  <section id="certifications" class="section certs-section" aria-labelledby="certs-heading">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">// 05</span>
+        <h2 id="certs-heading" class="section-title">Certifications</h2>
+        <div class="title-line"></div>
+      </div>
+
+      <!-- Cert Cards Grid -->
+      <!-- To ADD a cert: copy a .cert-card and update the content and status class -->
+      <div class="certs-grid">
+
+        <!-- EARNED cert -->
+        <div class="cert-card reveal cert-earned" data-delay="1" aria-label="Certification: CompTIA Security Plus">
+          <div class="cert-icon" aria-hidden="true">🏆</div>
+          <div class="cert-info">
+            <h3 class="cert-name">CompTIA Security+</h3>
+            <span class="cert-issuer">CompTIA</span>
+            <span class="cert-status earned">✓ In Progress</span>
+          </div>
+          <div class="cert-progress">
+            <div class="cert-bar"><div class="cert-fill" data-width="65"></div></div>
+            <span class="cert-pct">65%</span>
+          </div>
+        </div>
+
+        <!-- IN PROGRESS cert -->
+        <div class="cert-card reveal cert-progress-card" data-delay="2" aria-label="Certification: eJPT">
+          <div class="cert-icon" aria-hidden="true">🎯</div>
+          <div class="cert-info">
+            <h3 class="cert-name">eJPT</h3>
+            <span class="cert-issuer">eLearnSecurity</span>
+            <span class="cert-status in-progress">⏳ In Progress</span>
+          </div>
+          <div class="cert-progress">
+            <div class="cert-bar"><div class="cert-fill" data-width="40"></div></div>
+            <span class="cert-pct">40%</span>
+          </div>
+        </div>
+
+        <!-- PLANNED cert -->
+        <div class="cert-card reveal cert-planned" data-delay="3" aria-label="Certification: BTL1">
+          <div class="cert-icon" aria-hidden="true">📌</div>
+          <div class="cert-info">
+            <h3 class="cert-name">BTL1</h3>
+            <span class="cert-issuer">Security Blue Team</span>
+            <span class="cert-status planned">📅 Planned</span>
+          </div>
+          <div class="cert-progress">
+            <div class="cert-bar"><div class="cert-fill" data-width="10"></div></div>
+            <span class="cert-pct">10%</span>
+          </div>
+        </div>
+
+        <!-- PLANNED cert -->
+        <div class="cert-card reveal cert-planned" data-delay="4" aria-label="Certification: CySA Plus">
+          <div class="cert-icon" aria-hidden="true">📌</div>
+          <div class="cert-info">
+            <h3 class="cert-name">CySA+</h3>
+            <span class="cert-issuer">CompTIA</span>
+            <span class="cert-status planned">📅 Planned</span>
+          </div>
+          <div class="cert-progress">
+            <div class="cert-bar"><div class="cert-fill" data-width="5"></div></div>
+            <span class="cert-pct">5%</span>
+          </div>
+        </div>
+
+      </div><!-- /certs-grid -->
+    </div>
+  </section>
+
+  <!-- ========================================================
+       SECTION 7 — ACHIEVEMENTS
+  ======================================================== -->
+  <section id="achievements" class="section achievements-section" aria-labelledby="achievements-heading">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">// 06</span>
+        <h2 id="achievements-heading" class="section-title">Achievements</h2>
+        <div class="title-line"></div>
+      </div>
+
+      <!-- Timeline of achievements -->
+      <!-- To ADD: copy one .timeline-item and update -->
+      <div class="achievements-timeline">
+
+        <div class="timeline-item reveal" data-delay="1">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <span class="timeline-type type-ctf">🏴 CTF</span>
+              <span class="timeline-date">2024</span>
+            </div>
+            <h3 class="timeline-title">PicoCTF — Top 15% Globally</h3>
+            <p class="timeline-desc">
+              Competed in PicoCTF and placed in the top 15% of participants globally. 
+              Solved challenges in forensics, cryptography, web exploitation, and binary exploitation.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal" data-delay="2">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <span class="timeline-type type-academic">🎓 Academic</span>
+              <span class="timeline-date">2023</span>
+            </div>
+            <h3 class="timeline-title">Dean's List — Computer Science</h3>
+            <p class="timeline-desc">
+              Recognized on the Dean's List for academic excellence in the Computer Science department.
+              Achieved a 3.8 GPA while pursuing cybersecurity specialization coursework.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal" data-delay="3">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <span class="timeline-type type-ctf">🏴 CTF</span>
+              <span class="timeline-date">2024</span>
+            </div>
+            <h3 class="timeline-title">TryHackMe — Top 5% Ranking</h3>
+            <p class="timeline-desc">
+              Achieved top 5% ranking on TryHackMe by completing over 80 rooms in areas including 
+              SOC fundamentals, malware analysis, web application security, and network security.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal" data-delay="4">
+          <div class="timeline-dot" aria-hidden="true"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <span class="timeline-type type-award">🏅 Award</span>
+              <span class="timeline-date">2023</span>
+            </div>
+            <h3 class="timeline-title">University Cybersecurity Club — Founder</h3>
+            <p class="timeline-desc">
+              Founded and led the university's cybersecurity club, organizing CTF training sessions, 
+              guest speaker events, and workshops on ethical hacking fundamentals for 40+ members.
+            </p>
+          </div>
+        </div>
+
+      </div><!-- /timeline -->
+    </div>
+  </section>
+
+  <!-- ========================================================
+       SECTION 8 — CONTACT
+  ======================================================== -->
+  <section id="contact" class="section contact-section" aria-labelledby="contact-heading">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">// 07</span>
+        <h2 id="contact-heading" class="section-title">Get In Touch</h2>
+        <div class="title-line"></div>
+      </div>
+
+      <div class="contact-layout">
+
+        <!-- Terminal intro -->
+        <div class="contact-terminal reveal" data-delay="1">
+          <div class="terminal-header">
+            <span class="t-dot t-red"></span>
+            <span class="t-dot t-yellow"></span>
+            <span class="t-dot t-green"></span>
+            <span class="t-title">contact.sh</span>
+          </div>
+          <div class="terminal-body">
+<pre><code><span class="t-comment"># Reach out for:</span>
+<span class="t-cmd">echo</span> <span class="t-val">"Internship opportunities"</span>
+<span class="t-cmd">echo</span> <span class="t-val">"Entry-level SOC roles"</span>
+<span class="t-cmd">echo</span> <span class="t-val">"CTF team collaboration"</span>
+<span class="t-cmd">echo</span> <span class="t-val">"Cybersecurity discussions"</span>
+
+<span class="t-comment"># Response time:</span>
+<span class="t-cmd">ping</span> me <span class="t-val">--expect-reply-within 24h</span>
+
+<span class="t-comment"># Status:</span>
+<span class="t-key">OPEN_TO_OPPORTUNITIES</span>=<span class="t-val">true</span></code></pre>
+          </div>
+        </div>
+
+        <!-- Social Links -->
+        <div class="contact-links reveal" data-delay="2">
+          <h3 class="contact-sub">Connect with me</h3>
+
+          <!-- Update each href with your real links -->
+          <a href="https://github.com/yourusername" class="contact-link" target="_blank" rel="noopener" aria-label="GitHub profile">
+            <span class="contact-link-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+            </span>
+            <div class="contact-link-info">
+              <span class="link-platform">GitHub</span>
+              <span class="link-handle">@yourusername</span>
+            </div>
+            <span class="link-arrow">→</span>
+          </a>
+
+          <a href="https://linkedin.com/in/yourusername" class="contact-link" target="_blank" rel="noopener" aria-label="LinkedIn profile">
+            <span class="contact-link-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </span>
+            <div class="contact-link-info">
+              <span class="link-platform">LinkedIn</span>
+              <span class="link-handle">/in/yourusername</span>
+            </div>
+            <span class="link-arrow">→</span>
+          </a>
+
+          <a href="mailto:your.email@example.com" class="contact-link" aria-label="Send email">
+            <span class="contact-link-icon">✉️</span>
+            <div class="contact-link-info">
+              <span class="link-platform">Email</span>
+              <span class="link-handle">your.email@example.com</span>
+            </div>
+            <span class="link-arrow">→</span>
+          </a>
+
+          <a href="https://twitter.com/yourusername" class="contact-link" target="_blank" rel="noopener" aria-label="Twitter/X profile">
+            <span class="contact-link-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </span>
+            <div class="contact-link-info">
+              <span class="link-platform">Twitter / X</span>
+              <span class="link-handle">@yourusername</span>
+            </div>
+            <span class="link-arrow">→</span>
+          </a>
+
+          <!-- Resume Download Button -->
+          <a href="assets/resume.pdf" download class="btn btn-primary resume-dl-btn reveal" data-delay="3" aria-label="Download resume PDF">
+            ↓ Download Resume (PDF)
+          </a>
+        </div>
+
+      </div><!-- /contact-layout -->
+    </div>
+  </section>
+
+  <!-- ========================================================
+       FOOTER
+  ======================================================== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <span class="footer-copy">
+        <span class="footer-bracket">[</span> Built by Your Name <span class="footer-bracket">]</span>
+        &nbsp;—&nbsp; Open source on
+        <a href="https://github.com/yourusername/portfolio" target="_blank" rel="noopener">GitHub</a>
+      </span>
+      <span class="footer-status">
+        <span class="status-dot" aria-hidden="true"></span> All systems operational
+      </span>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <button id="back-to-top" aria-label="Scroll back to top" title="Back to top">↑</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
